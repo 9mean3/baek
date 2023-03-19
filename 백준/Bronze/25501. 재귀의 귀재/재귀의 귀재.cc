@@ -1,7 +1,7 @@
 #include <cstring>
 #include <iostream>
 using namespace std;
-int t;
+
 int cnt=0;
 char c[1001];
 
@@ -12,12 +12,12 @@ int recursion(const char *s, int l, int r){
     else return recursion(s, l+1, r-1);
 }
 
-int isPalindrome(const char * s){
-    return recursion(s, 0, strlen(s) - 1);
+int isPalindrome(const char *s){
+    return recursion(s, 0, strlen(s)-1);
 }
 
 int main(){
-	
+	int t;
 	cin >> t;
 	for (int i = 0; i < t; i++) {
 		cin >> c;
