@@ -2,12 +2,12 @@
 using namespace std;
 
 int main(){
-	int arr[6];
+	int n;
 	int chessHorse[6] = { 1,1,2,2,2,8 };
 	for (int i = 0; i < 6; i++)
 	{
-		cin >> arr[i];
-		chessHorse[i] -= arr[i];
+		cin >> n;
+		chessHorse[i] -= n;
 	}
 	for (int i = 0; i < 6; i++)
 	{
