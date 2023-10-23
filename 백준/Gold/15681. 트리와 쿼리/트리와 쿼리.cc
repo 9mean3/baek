@@ -7,11 +7,9 @@ int p[100001] = { 0, };
 int cnt[100001] = { 0, };
 
 void dfs(int curnode) {
-	//cout << curnode;
 	cnt[curnode]++;
 	for (auto i : adj[curnode])
 	{
-		//cnt[curnode]++;
 		if (i == p[curnode]) continue;
 		p[i] = curnode;
 		dfs(i);
@@ -22,8 +20,8 @@ void dfs(int curnode) {
 int main()
 {
     ios_base::sync_with_stdio(false);
-cin.tie(NULL);
-cout.tie(NULL);
+	cin.tie(NULL);
+	cout.tie(NULL);
 	int N, R, Q;
 	cin >> N >> R >> Q;
 	for (int i = 1; i < N; i++)
