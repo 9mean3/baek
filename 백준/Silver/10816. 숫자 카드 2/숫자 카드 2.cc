@@ -1,43 +1,40 @@
 #include<iostream>
-#include<string>
 #include<vector>
-#include<time.h>
-#include<stack>
-#include<queue>
-#include<deque>
-#include<map>
-#include<set>
+#include<algorithm>
 
-#include<algorithm>//
-
-#include<sstream>
 using namespace std;
 
 int main() {
-    ios::sync_with_stdio(false);
 	int n;
-	map<int, int> cards;
-
+	vector<int> nrr;
 	cin >> n;
 	for (int i = 0; i < n; i++)
 	{
 		int input;
 		cin >> input;
-		cards[input]++;
+		nrr.push_back(input);
 	}
 
 	int m;
+	vector<int> mrr;
 	cin >> m;
-	int* arr = new int[m];
 	for (int i = 0; i < m; i++)
 	{
 		int input;
 		cin >> input;
-		arr[i] = input;
+		mrr.push_back(input);
 	}
 
-	for (int i = 0; i < m; i++)
-	{
-		cout << cards[arr[i]] << ' ';
+	sort(nrr.begin(), nrr.end());
+
+	vector<int> answer;
+	for (auto i : mrr) {
+		vector<int>::iterator iter = upper_bound(nrr.begin(), nrr.end(), i);
+		vector<int>::iterator iter1 = lower_bound(nrr.begin(), nrr.end(), i);
+		answer.push_back(iter - iter1);
+	}
+
+	for (auto i : answer) {
+		cout << i << ' ';
 	}
 }
