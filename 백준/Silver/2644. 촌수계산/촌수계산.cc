@@ -5,11 +5,6 @@ using namespace std;
 int n, targetA, targetB, m;
 int board[101][101] = { 0, };
 int visited[101] = { 0, };
-int dx[4] = { 1,0,-1,0 };
-int dy[4] = { 0,1,0,-1 };
-
-void bfs(int x, int y) {
-}
 
 int main() {
 	ios_base::sync_with_stdio(false);
@@ -40,29 +35,5 @@ int main() {
 			}
 		}
 	}
-
-	//for (int i = 1; i <= n; i++)
-	//{
-	//	for (int j = 1; j <= n; j++)
-	//	{
-	//		cout << visited[i][j] << ' ';
-	//	}
-	//	cout << endl;
-	//}
-
-	//for (int i = 1; i <= n; i++)
-	//{
-	//	for (int j = 1; j <= n; j++)
-	//	{
-	//		cout << board[i][j] << ' ';
-	//	}
-	//	cout << endl;
-	//}
-	//cout << endl;
-
-	//for (int i = 1; i <= n; i++)
-	//{
-	//	cout << visited[i] << ' ';
-	//}
 	cout << visited[targetB] - 1;
 }
